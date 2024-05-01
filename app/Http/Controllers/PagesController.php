@@ -122,7 +122,7 @@ class PagesController extends Controller
             if(!$page){
                 $page = new Pages();
                 $page->title ="contactus";
-                $page->mobile = request()->get('mobile_number');
+                $page->mobile_number = request()->get('mobile_number');
                 $page->email = request()->get('email');
                 $page->content = request()->get('address');
                 $page->save();

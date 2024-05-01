@@ -20,16 +20,16 @@ class AuthController extends Controller
         $auth = auth()->guard(userGuard());
         $error = '';
 
-        // $user = User::with("roles")
+        $user = User::with("roles")
         // ->whereHas("roles", function($q) {
         //     $q->whereIn("name", ["sub admin","admin"]);
         // })
-        // ->where('email',$request->email)
-        // ->first();
-
-        $user = User::with("roles")
-        ->where('email', $request->email)
+        ->where('email',$request->email)
         ->first();
+
+        // $user = User::with("roles")
+        // ->where('email', $request->email)
+        // ->first();
         // dd($user);
 
         if($user){
